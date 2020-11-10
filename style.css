@@ -33,19 +33,38 @@ li
 
 .card
 {
+    position: relative;
     background: white;
-    margin: 0 auto 8em auto;
-    border-left: solid rgba(215, 175, 128, .25) 5px;
     box-shadow: 13px 32px 36px -14px hsla(0, 0%, 70%, 0.3);
-    padding: 7em;
+    padding: 1em 7em 4em 7em;
+    border-left: solid rgba(215, 175, 128, .15) .5em;
+}
+
+.collapsible-card
+{
+    overflow: hidden;
+    transition: border-left .2s ease-out;
+    padding-bottom: 1em;
+    transition: padding-bottom .2s ease-out;
+}
+
+.collapsible-card:hover
+{
+    border-left: solid rgba(215, 175, 128, .4) .5em;
+}
+
+.active-card, .active-card:hover
+{
+    border-left: solid rgba(215, 175, 128, .75) 1em;
 }
 
 #site-title
 {
     letter-spacing: 0.1em;
     font-size: 2.5em;
-    font-weight: 800;
+    font-weight: 700;
     color: rgba(0, 0, 0, 0.75);
+    text-transform: uppercase;
 }
 
 #site-subtitle
@@ -90,20 +109,38 @@ li
 {
     margin: 2em auto 2em auto;
     border-left: solid rgba(215, 175, 128, .6) 1em;
-    font-size: 4em;
-    font-weight: 200;
+    font-size: 5em;
+    font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
     padding-left: 1em;
     letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .card-title
 {
     letter-spacing: 0.1em;
-    font-size: 2em;
-    margin-bottom: 1.5em;
-    font-weight: 700;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    padding: 1em 0;
+    font-weight: 400;
     text-transform: uppercase;
+}
+
+.toggle
+{
+    cursor: pointer;
+    margin-bottom : 0;
+    opacity: 50%;
+    transition: margin-bottom .2s ease-out;
+    transition: opacity .1s ease-out;
+}
+
+.card-content
+{
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height .2s ease-out;
 }
 
 .price
@@ -119,11 +156,6 @@ li
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-#foot-care div:nth-child(1)
-{
-    padding-right: 5em;
 }
 
 #qualifications-wrapper
@@ -143,20 +175,15 @@ li
 
 #fht-image
 {
-    padding: 2em;
-    margin-top: 2em;
-    width: 80%;
+    margin-right: 10%;
+    width: 30%;
     height: auto;
 }
 
-#dipolomas
-{
-    border-bottom: 5px solid rgba(215, 175, 128, 0.25);
-}
-
-#contact-form
+#contact-form, #map-card, #contacts
 {
     padding: 0;
+    margin-bottom: 7em;
 }
 
 input, textarea
@@ -206,20 +233,43 @@ textarea
 
 #contacts > *
 {
+    color: black;
+    background: white;
     font-size: 1.5em;
-    font-weight: 500;
+    font-weight: 400;
     padding: 1.25em 2.5em;
 }
 
-#map-card
+#contact-links
 {
-    padding: 0;
+    opacity: 50%;
+}
+
+#contact-links:hover
+{
+    opacity: 100%;
 }
 
 iframe
 {
     height: 400px;
     width: 100%;
+}
+
+#covid
+{
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1em;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    background-color: rgba(31, 159, 102, .65);
+}
+
+#covid:hover
+{
+    background-color: rgba(31, 159, 102, .8);
 }
 
 @media (max-width: 1000px)
