@@ -136,7 +136,7 @@ li
     transition: opacity .1s ease-out;
 }
 
-.card-content
+.collapsible-card-content
 {
     max-height: 0px;
     overflow: hidden;
